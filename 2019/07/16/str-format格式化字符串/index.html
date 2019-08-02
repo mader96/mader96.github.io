@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="str.format()格式化字符串">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/str-format格式化字符串/index.html">
+<meta property="og:site_name" content="Mads">
+<meta property="og:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-16T07:02:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="str.format()格式化字符串">
+<meta name="twitter:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/icon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/icon - 192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/icon-apple.png">
+          
+        
+    
+    <!-- title -->
+    <title>str.format()格式化字符串</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/07/16/Python常用转义符/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/07/16/Python Generator/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/07/16/str-format格式化字符串/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&text=str.format()格式化字符串"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&is_video=false&description=str.format()格式化字符串"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=str.format()格式化字符串&body=Check out this article: http://yoursite.com/2019/07/16/str-format格式化字符串/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&name=str.format()格式化字符串&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        str.format()格式化字符串
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Mads</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-07-16T06:59:48.000Z" itemprop="datePublished">2019-07-16</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Programming/">Programming</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>对于str.format()方法格式化字符串方法的一个总结。</p>
+<p>通过位置参数格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;0&#125;， &#123;1&#125;, &#123;2&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a， b, c&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;&#125;, &#123;&#125;, &#123;&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a, b, c&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;2&#125;, &#123;1&#125;, &#123;0&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;c, b, a&apos;</span><br></pre></td></tr></table></figure>
+
+<p>通过关键字参数格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(latitude=<span class="string">'37.24N'</span>, longitude=<span class="string">'-115.81W'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = &#123;<span class="string">'latitude'</span>:<span class="string">'37.24N'</span>, <span class="string">'longitude'</span>:<span class="string">'-115.81W'</span>&#125;</span><br><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(**coord)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;<span class="string">'a'</span> :<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="string">'x: &#123;a&#125;, &#123;b&#125;, &#123;c&#125;'</span>.format(**x)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;x: 1, 2, 3&apos;</span><br></pre></td></tr></table></figure>
+
+<p>通过对象属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">3</span><span class="number">-5j</span></span><br><span class="line">(<span class="string">'The complex number &#123;0&#125; is formed from the real part &#123;0.real&#125; and the imaginary part &#123;0.imag&#125;.'</span>).format(c)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;The complex number (3-5j) is formed from the real part 3.0 and the imaginary part -5.0.&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self.x, self.y = x, y</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Point(&#123;self.x&#125;, &#123;self.y&#125;)'</span>.format(self=self)</span><br><span class="line"></span><br><span class="line">str(Point(<span class="number">4</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;Point(4, 2)&apos;</span><br></pre></td></tr></table></figure>
+
+<p>Accessing argument’s items</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = (<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="string">'X: &#123;0[0]&#125;; Y:&#123;0[1]&#125;'</span>.format(coord)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;X: 3; Y:5&apos;</span><br></pre></td></tr></table></figure>
+
+<p>格式限定符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 填充与对齐：^&lt;&gt;分别是居中，左对齐与右对齐，后面带宽度；：后面带填充的字符，只能是一个字符，不指定默认为空格</span></span><br><span class="line"><span class="string">'&#123;:&lt;30&#125;'</span>.format(<span class="string">'left aligned'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;left aligned                  &apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:&gt;30&#125;'</span>.format(<span class="string">'right aligned'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;                 right aligned&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;        center aligned        &apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:*^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;********center aligned********&apos;</span><br></pre></td></tr></table></figure>
+
+<p>使用逗号作为千分位符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:,&#125;'</span>.format(<span class="number">123456789</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;123,456,789&apos;</span><br></pre></td></tr></table></figure>
+
+<p>表示百分比</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">points = <span class="number">19</span></span><br><span class="line">total = <span class="number">22</span></span><br><span class="line"><span class="string">'correct answers: &#123;:.2%&#125;'</span>.format(points/total)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;correct answers: 86.36%&apos;</span><br></pre></td></tr></table></figure>
+
+<p>Using type-specific formating</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">d = datetime.datetime(<span class="number">2010</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">58</span>)</span><br><span class="line">print(<span class="string">'&#123;:%Y/%m/%d %H:%M:%S&#125;'</span>.format(d))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2010/07/04 12:15:58</span><br><span class="line">2010-07-04 12:15:58</span><br></pre></td></tr></table></figure>
+
+<p>数字精度与类型f</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:.2f&#125;'</span>.format(<span class="number">2016.0284</span>) <span class="comment"># .2表示精度为2，f表示float类型</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2016.03&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他类型：b,d,o,x分别表示二进制，十进制，八进制，十六进制</span></span><br><span class="line"><span class="string">'&#123;:b&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;11111100011&apos;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:d&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2019&apos;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/07/16/str-format格式化字符串/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&text=str.format()格式化字符串"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&is_video=false&description=str.format()格式化字符串"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=str.format()格式化字符串&body=Check out this article: http://yoursite.com/2019/07/16/str-format格式化字符串/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&title=str.format()格式化字符串"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/07/16/str-format格式化字符串/&name=str.format()格式化字符串&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 LST
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
