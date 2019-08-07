@@ -11,7 +11,7 @@
 
     <title>
         
-          Tags - Mads
+          解决Ubuntu18.04耳机没有声音问题 - Mads
         
     </title>
 
@@ -67,16 +67,72 @@
 
       <div class="column col-8 col-lg-12">
         <div class="book-content">
-          
-<article id="page">
-  <h1>Tags</h1>
-  
-</article>
+          <div class="book-navbar">
+  <header class="navbar">
+  <section class="navbar-section">
+    <img class="navbar-icon" src="/icon.ico">
+  </section>
+  <section class="navbar-center">
+    Mads
+  </section>
+  <section class="navbar-section">
+    <label class="accordion-header c-hand" for="accordion-sidebar">
+      <i class="icon icon-menu"></i>
+    </label>
+  </section>
+</header>
 
-<div id="paginator">
-  
+<div class="accordion">
+  <input type="checkbox" id="accordion-sidebar" name="accordion-checkbox" hidden>
+  <div class="accordion-body">
+    
+  </div>
+</div>
 </div>
 
+<div class="book-post">
+  <p>安装Ubuntu18.04后插入耳机没有声音，我的电脑型号为华为matebook13，记录解决方法如下：</p>
+<h4 id="利用alsamixer"><a href="#利用alsamixer" class="headerlink" title="利用alsamixer"></a>利用alsamixer</h4><ol>
+<li>重新安装alsa-base pluseaudio alsa-utils</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove --purge alsa-base pulseaudio alsa-utils</span><br><span class="line">sudo apt install alsa-base pulseaudio alsa-utils</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>调整alsamixer</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo alsamixer</span><br></pre></td></tr></table></figure>
+
+<p>在命令行中按左右箭头切换选项定位到Headphone，按“m”键将底部的“MM”选项调整为“OO”，按ESC键退出。</p>
+<ol start="3">
+<li>保存调整结果</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo alsactl store</span><br></pre></td></tr></table></figure>
+
+<h4 id="利用pavucontrol"><a href="#利用pavucontrol" class="headerlink" title="利用pavucontrol"></a>利用pavucontrol</h4><ol>
+<li>安装pavucontrol</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install pavucontrol</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改输出设备端口</li>
+</ol>
+<p>选择Output Devices，在Port的下拉列表中选择Headphones(unplugged)。保存退出。</p>
+<p>另外，在查阅资料中发现还可能出现只有一个耳机有声音的情况。这种情况可以通过安装gnome-alsamixer解决。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-alsamixer</span><br></pre></td></tr></table></figure>
+
+<p>打开gnome-alsamixer，将Headphone下的滑动拉杆拉到中间即可。</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+  </div>
+
+
+<script src="/js/book-post.js"></script>
         </div>
       </div>
 
