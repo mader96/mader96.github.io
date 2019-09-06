@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+    <meta name="description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;apos;a， b, c&amp;apos; 1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;a">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="str.format()格式化字符串">
 <meta property="og:url" content="http://yoursite.com/2019/07/16/str-format格式化字符串/index.html">
 <meta property="og:site_name" content="Mads">
-<meta property="og:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+<meta property="og:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;apos;a， b, c&amp;apos; 1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;a">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-07-16T07:02:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="str.format()格式化字符串">
-<meta name="twitter:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  1&amp;apos;a， b, c&amp;apos;  1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)">
+<meta name="twitter:description" content="对于str.format()方法格式化字符串方法的一个总结。 通过位置参数格式化 1&apos;&amp;#123;0&amp;#125;， &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;apos;a， b, c&amp;apos; 1&apos;&amp;#123;&amp;#125;, &amp;#123;&amp;#125;, &amp;#123;&amp;#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) 1&amp;a">
     
     
         
@@ -158,90 +158,52 @@
   <div class="content" itemprop="articleBody">
     <p>对于str.format()方法格式化字符串方法的一个总结。</p>
 <p>通过位置参数格式化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;0&#125;， &#123;1&#125;, &#123;2&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a， b, c&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;&#125;, &#123;&#125;, &#123;&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a, b, c&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;2&#125;, &#123;1&#125;, &#123;0&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;c, b, a&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;0&#125;， &#123;1&#125;, &#123;2&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a， b, c&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;&#125;, &#123;&#125;, &#123;&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a, b, c&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;2&#125;, &#123;1&#125;, &#123;0&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;c, b, a&apos;</span><br></pre></td></tr></table></figure></p>
 <p>通过关键字参数格式化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(latitude=<span class="string">'37.24N'</span>, longitude=<span class="string">'-115.81W'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = &#123;<span class="string">'latitude'</span>:<span class="string">'37.24N'</span>, <span class="string">'longitude'</span>:<span class="string">'-115.81W'</span>&#125;</span><br><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(**coord)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;<span class="string">'a'</span> :<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="string">'x: &#123;a&#125;, &#123;b&#125;, &#123;c&#125;'</span>.format(**x)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;x: 1, 2, 3&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(latitude=<span class="string">'37.24N'</span>, longitude=<span class="string">'-115.81W'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = &#123;<span class="string">'latitude'</span>:<span class="string">'37.24N'</span>, <span class="string">'longitude'</span>:<span class="string">'-115.81W'</span>&#125;</span><br><span class="line"><span class="string">'coordinates: &#123;latitude&#125;, &#123;longitude&#125;'</span>.format(**coord)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;coordinates: 37.24N, -115.81W&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;<span class="string">'a'</span> :<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="string">'x: &#123;a&#125;, &#123;b&#125;, &#123;c&#125;'</span>.format(**x)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;x: 1, 2, 3&apos;</span><br></pre></td></tr></table></figure></p>
 <p>通过对象属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">3</span><span class="number">-5j</span></span><br><span class="line">(<span class="string">'The complex number &#123;0&#125; is formed from the real part &#123;0.real&#125; and the imaginary part &#123;0.imag&#125;.'</span>).format(c)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;The complex number (3-5j) is formed from the real part 3.0 and the imaginary part -5.0.&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self.x, self.y = x, y</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Point(&#123;self.x&#125;, &#123;self.y&#125;)'</span>.format(self=self)</span><br><span class="line"></span><br><span class="line">str(Point(<span class="number">4</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;Point(4, 2)&apos;</span><br></pre></td></tr></table></figure>
-
-<p>Accessing argument’s items</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = (<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="string">'X: &#123;0[0]&#125;; Y:&#123;0[1]&#125;'</span>.format(coord)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;X: 3; Y:5&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">3</span><span class="number">-5j</span></span><br><span class="line">(<span class="string">'The complex number &#123;0&#125; is formed from the real part &#123;0.real&#125; and the imaginary part &#123;0.imag&#125;.'</span>).format(c)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;The complex number (3-5j) is formed from the real part 3.0 and the imaginary part -5.0.&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self.x, self.y = x, y</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Point(&#123;self.x&#125;, &#123;self.y&#125;)'</span>.format(self=self)</span><br><span class="line"></span><br><span class="line">str(Point(<span class="number">4</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;Point(4, 2)&apos;</span><br></pre></td></tr></table></figure></p>
+<p>Accessing argument's items</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coord = (<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="string">'X: &#123;0[0]&#125;; Y:&#123;0[1]&#125;'</span>.format(coord)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;X: 3; Y:5&apos;</span><br></pre></td></tr></table></figure></p>
 <p>格式限定符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 填充与对齐：^&lt;&gt;分别是居中，左对齐与右对齐，后面带宽度；：后面带填充的字符，只能是一个字符，不指定默认为空格</span></span><br><span class="line"><span class="string">'&#123;:&lt;30&#125;'</span>.format(<span class="string">'left aligned'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;left aligned                  &apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:&gt;30&#125;'</span>.format(<span class="string">'right aligned'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;                 right aligned&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;        center aligned        &apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:*^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;********center aligned********&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 填充与对齐：^&lt;&gt;分别是居中，左对齐与右对齐，后面带宽度；：后面带填充的字符，只能是一个字符，不指定默认为空格</span></span><br><span class="line"><span class="string">'&#123;:&lt;30&#125;'</span>.format(<span class="string">'left aligned'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;left aligned                  &apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:&gt;30&#125;'</span>.format(<span class="string">'right aligned'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;                 right aligned&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;        center aligned        &apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:*^30&#125;'</span>.format(<span class="string">'center aligned'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;********center aligned********&apos;</span><br></pre></td></tr></table></figure></p>
 <p>使用逗号作为千分位符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:,&#125;'</span>.format(<span class="number">123456789</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;123,456,789&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:,&#125;'</span>.format(<span class="number">123456789</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;123,456,789&apos;</span><br></pre></td></tr></table></figure></p>
 <p>表示百分比</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">points = <span class="number">19</span></span><br><span class="line">total = <span class="number">22</span></span><br><span class="line"><span class="string">'correct answers: &#123;:.2%&#125;'</span>.format(points/total)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;correct answers: 86.36%&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">points = <span class="number">19</span></span><br><span class="line">total = <span class="number">22</span></span><br><span class="line"><span class="string">'correct answers: &#123;:.2%&#125;'</span>.format(points/total)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;correct answers: 86.36%&apos;</span><br></pre></td></tr></table></figure></p>
 <p>Using type-specific formating</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">d = datetime.datetime(<span class="number">2010</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">58</span>)</span><br><span class="line">print(<span class="string">'&#123;:%Y/%m/%d %H:%M:%S&#125;'</span>.format(d))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2010/07/04 12:15:58</span><br><span class="line">2010-07-04 12:15:58</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">d = datetime.datetime(<span class="number">2010</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">58</span>)</span><br><span class="line">print(<span class="string">'&#123;:%Y/%m/%d %H:%M:%S&#125;'</span>.format(d))</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2010/07/04 12:15:58</span><br><span class="line">2010-07-04 12:15:58</span><br></pre></td></tr></table></figure></p>
 <p>数字精度与类型f</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:.2f&#125;'</span>.format(<span class="number">2016.0284</span>) <span class="comment"># .2表示精度为2，f表示float类型</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2016.03&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他类型：b,d,o,x分别表示二进制，十进制，八进制，十六进制</span></span><br><span class="line"><span class="string">'&#123;:b&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;11111100011&apos;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:d&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2019&apos;</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:.2f&#125;'</span>.format(<span class="number">2016.0284</span>) <span class="comment"># .2表示精度为2，f表示float类型</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2016.03&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其他类型：b,d,o,x分别表示二进制，十进制，八进制，十六进制</span></span><br><span class="line"><span class="string">'&#123;:b&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;11111100011&apos;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&#123;:d&#125;'</span>.format(<span class="number">2019</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2019&apos;</span><br></pre></td></tr></table></figure></p>
 
   </div>
 </article>
