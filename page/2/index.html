@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="QUIETLY BRILLIANT">
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="QUIETLY BRILLIANT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mads">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
@@ -16,264 +65,515 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mads">
 <meta name="twitter:description" content="QUIETLY BRILLIANT">
-    
-    
-        
-          
-              <link rel="shortcut icon" href="/images/icon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/icon - 192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/icon-apple.png">
-          
-        
-    
-    <!-- title -->
-    <title>Mads</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/css/rtl.css">
-    
-    <!-- rss -->
-    
-    
+  <link rel="canonical" href="http://yoursite.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Mads</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-    <div class="content index py4">
-        
-          <header id="header">
-  <a href="/">
-  
-    
-      <div id="logo" style="background-image: url(/images/icon.png);"></div>
-    
-  
-    <div id="title">
-      <h1>Mads</h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mads</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-       
-        <li><a href="/">Home</a></li>
-       
-        <li><a href="/about/">About</a></li>
-       
-        <li><a href="/tags/">Tags</a></li>
-       
-        <li><a href="/categories/">Categories</a></li>
-       
-        <li><a href="/archives/">Writing</a></li>
-       
-        <li><a href="/search/">Search</a></li>
-      
-    </ul>
   </div>
-</header>
 
-        
-        <section id="about">
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
   
-    <p>QUIETLY BRILLIANT</p>
-
-  
-  
-    <p>
-      Find me on
+  <ul id="menu" class="menu">
       
       
       
         
-          <a class="icon" target="_blank" href="https://weibo.com/6793641283/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1">
-            <i class="fab fa-weibo"></i><!--
-      ---></a><!--
-    ---><!--
-    ---> and 
-        
-      
-        
-          <a class="icon" target="_blank" href="/shaotianliu@outlook.com">
-            <i class="fas fa-envelope"></i><!--
-      ---></a><!--
-      ---><!--
-    --->.
-        
-      
-    </p>
-  
-</section>
-
-<section id="writing">
-  <span class="h1"><a href="/archives">Writing</a></span>
-  
-  <ul class="post-list">
-    
-    
+        <li class="menu-item menu-item-home">
       
     
-    
-      <li class="post-item">
-        
-    <div class="meta">
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
-          <time datetime="2019-08-04T11:41:57.000Z" itemprop="datePublished">2019-08-04</time>
-        
+        <li class="menu-item menu-item-about">
       
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2019/08/04/解决Ubuntu18-04耳机没有声音问题/">解决Ubuntu18.04耳机没有声音问题</a>
     
 
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
-</span>
-      </li>
-    
-      <li class="post-item">
-        
-    <div class="meta">
+  </li>
+      
+      
       
         
-          <time datetime="2019-08-03T16:39:31.000Z" itemprop="datePublished">2019-08-04</time>
-        
+        <li class="menu-item menu-item-tags">
       
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2019/08/04/初识Pyenv/">初识Pyenv</a>
     
 
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
-</span>
-      </li>
-    
-      <li class="post-item">
-        
-    <div class="meta">
+  </li>
+      
+      
       
         
-          <time datetime="2019-08-03T16:37:58.000Z" itemprop="datePublished">2019-08-04</time>
-        
+        <li class="menu-item menu-item-categories">
       
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2019/08/04/Linux-notes/">Linux notes</a>
     
 
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
 
-</span>
-      </li>
-    
-      <li class="post-item">
-        
-    <div class="meta">
+  </li>
+      
+      
       
         
-          <time datetime="2019-08-02T09:29:48.000Z" itemprop="datePublished">2019-08-02</time>
-        
+        <li class="menu-item menu-item-archives">
       
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2019/08/02/Ubuntu18-04的美化/">Ubuntu18.04的美化</a>
     
 
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-</span>
-      </li>
-    
-      <li class="post-item">
-        
-    <div class="meta">
+  </li>
+      
+      
       
         
-          <time datetime="2019-08-02T09:29:24.000Z" itemprop="datePublished">2019-08-02</time>
-        
+        <li class="menu-item menu-item-schedule">
       
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2019/08/02/Ubuntu18-04的安装与配置/">Ubuntu18.04的安装与配置</a>
     
 
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>Schedule</a>
 
-</span>
-      </li>
-    
+  </li>
   </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
   
-</section>
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/Ubuntu下Hexo+Github建站笔记/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content="QUIETLY BRILLIANT">
+      <meta itemprop="image" content="/images/icon.png">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mads">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/07/14/Ubuntu下Hexo+Github建站笔记/" class="post-title-link" itemprop="url">Ubuntu下Hexo+Github建站笔记</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-07-14 16:19:48" itemprop="dateCreated datePublished" datetime="2019-07-14T16:19:48+08:00">2019-07-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-02 12:04:06" itemprop="dateModified" datetime="2019-08-02T12:04:06+08:00">2019-08-02</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technique/" itemprop="url" rel="index"><span itemprop="name">Technique</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本篇记录建站所用资料与建站过程中所遇到的问题。</p>
+<p>&lt;!-- more --&gt;</p>
+<h3>初始化博客与本地测试</h3>
+<h4>安装git</h4>
+<blockquote>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+</blockquote>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br><span class="line">git --version # 查看git版本</span><br></pre></td></tr></table></figure></p>
+<h4>安装Node.js</h4>
+<blockquote>
+<p>简单的说<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>就是运行在服务端的 JavaScript。Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。npm是Node.js的包管理工具，其方便高效，在Node.js安装时自动安装完成。npm可以根据依赖关系，把所有依赖的包都下载下来并管理起来。</p>
+</blockquote>
+<p>从Node.js官方平台下载安装包，解压安装。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v # 查看Node.js版本</span><br><span class="line">npm -v # 查看npm版本</span><br></pre></td></tr></table></figure></p>
+<h4>安装Hexo并初始化博客</h4>
+<blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> is a fast, simple and powerful blog framework. You write posts in <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> (or other languages) and Hexo generates static files with a beautiful theme in seconds.</p>
+</blockquote>
+<p>新建博客目录Blog，进入到该目录下右键打开终端，输入以下命令：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli  # 将hexo安装到全局</span><br><span class="line">hexo init # 在当前目录初始化博客</span><br><span class="line">npm install hexo-deployer-git --save  # 安装部署插件</span><br></pre></td></tr></table></figure></p>
+<h4>本地测试</h4>
+<p>终端输入：<code>hexo s</code>，按照终端提示在浏览器输入<code>http://0.0.0.0:4000</code>，即可访问首页。</p>
+<h3>链接到Github</h3>
+<h4>配置git</h4>
+<ol>
+<li>配置用户信息</li>
+</ol>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>配置ssh</li>
+</ol>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></p>
+<p>在终端输入上述指令后，直接三个回车，默认不需要设置密码，最后得到了两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code>。（操作过程中国按终端提示选择<code>overwrite</code>即可）</p>
+<p>在终端利用<code>cat /home/username/.ssh/id_rsa.pub</code>指令查看ssh密钥文件并复制，打开<code>Github_Settings_keys</code>页面，新建new SSH Key，将ssh密钥文件粘贴进去并添加。</p>
+<p>在终端中检测GitHub公钥设置是否成功，输入 <code>ssh git@github.com</code></p>
+<blockquote>
+<p>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+</blockquote>
+<h4>在Github上建立仓库并配置</h4>
+<ol>
+<li>创建仓库名为<code>用户名.github.io</code>的仓库。如果仓库名正确，拉到下方的GitHub Pages可以看到“Your site is published at:<code>http://用户名.github.io/</code>”。</li>
+<li>编辑站点配置文件</li>
+</ol>
+<p>在博客目录下的<code>_config.yml</code>文件中找到以下代码并修改：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:https://github.com/mader96/mader96.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<h4>生成静态文件并部署</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<h3>修改主题</h3>
+<p>我安装的是cactus主题，在themes目录下使用git命令将cactus主题克隆至本地，并在站点配置文件中修改themes为cactus。</p>
+<p>更多主题[https://hexo.io/themes/]</p>
+<h3>hexo常用命令</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g   #安装hexo</span><br><span class="line">npm update hexo -g    #升级hexo</span><br><span class="line">hexo init             #初始化博客</span><br><span class="line">hexo n  &quot;我的博客&quot;     #新建文章</span><br><span class="line">hexo g                #生成静态文件</span><br><span class="line">hexo s                #启动服务预览</span><br><span class="line">hexo d                #部署</span><br><span class="line">hexo clean            #清除缓存</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
+<h3>参考资料</h3>
+<ul>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo文档</a></li>
+<li><a href="https://github.com/probberechts/hexo-theme-cactus" target="_blank" rel="noopener">cactus主题</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">知乎教程</a></li>
+</ul>
+<h3></h3>
 
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2019 LST
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/tags/">Tags</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/search/">Search</a></li>
-        
+  
+  
+  
+  </article>
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
       </ul>
-    </nav>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/icon.png"
+      alt="LST">
+  <p class="site-author-name" itemprop="name">LST</p>
+  <div class="site-description" itemprop="description">QUIETLY BRILLIANT</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:madness96@foxmail.com" title="E-Mail &rarr; mailto:madness96@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/6793641283/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="Weibo &rarr; https://weibo.com/6793641283/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
   </div>
-</footer>
+
+
+
+      </div>
 
     </div>
-    <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
-    <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
-<!-- search -->
 
-<!-- Google Analytics -->
+      </div>
+    </main>
 
-<!-- Baidu Analytics -->
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
 
-<!-- Disqus Comments -->
+        
 
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
 
 </body>
 </html>
