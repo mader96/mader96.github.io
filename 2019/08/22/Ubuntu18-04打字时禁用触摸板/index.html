@@ -13,11 +13,11 @@
 
     <title>
         
-          Mads的博客 | Mads&#39;s Blog
+          Ubuntu18.04打字时禁用触摸板 - Mads的博客 | Mads&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/404.html">
+    <link rel="canonical" href="http://yoursite.com/2019/08/22/Ubuntu18-04打字时禁用触摸板/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,24 +148,161 @@
 
     <!-- Main Content -->
     
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+<!-- Image to hack wechat -->
+<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>404</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">你来到了没有知识的荒原 :(</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Ubuntu18.04" title="Ubuntu18.04">Ubuntu18.04</a>
+                        
+                    </div>
+                    <h1>Ubuntu18.04打字时禁用触摸板</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by LST on
+                        2019-08-22
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>https://ubuntuqa.com/article/2885.html</p>
+<p>http://ubuntuhandbook.org/index.php/2018/04/install-touchpad-indicator-ubuntu-18-04-lts/</p>
+<p>With Touchpad Indicator, you can easily:</p>
+<ul>
+<li><strong>Disable / Enable touchpad</strong> with indicator menu or keyboard shortcut.</li>
+<li><strong>Disable touchpad when mouse is plugged</strong>.</li>
+<li><strong>Disable touchpad while typing.</strong></li>
+<li>Also do basic settings for natural scrolling, tapping, touchpad speed, etc.</li>
+</ul>
+<h4>How to Install Touchpad Indicator in Ubuntu:</h4>
+<p>The software is available in the <a href="https://launchpad.net/~atareao/+archive/ubuntu/atareao" target="_blank" rel="noopener">developer’s PPA</a> for all current Ubuntu releases.</p>
+<p>Open terminal either via <strong>Ctrl+Alt+T</strong> or by searching for “terminal” from application launcher. When it opens, do followings steps to install the indicator:</p>
+<p><strong>1.</strong> Run command to add the PPA.</p>
+<p><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:atareao/atareao</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.</strong> Then check updates and install the software by running following commands one by one:</p>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line"></span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install touchpad-indicator</span><br></pre></td></tr></table></figure></p>
+<p>Once installed, launch it and you’ll see the applet icon in top-right system tray.</p>
+<h4>Uninstall:</h4>
+<p>To remove touchpad indicator, run <code>apt</code> command in terminal with <code>remove</code> flag:</p>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> --autoremove touchpad-indicator</span><br></pre></td></tr></table></figure></p>
+<p>To remove PPA repositories, launch <strong>Software &amp; Updates</strong> and navigate to <strong>Other Software</strong> tab.</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/08/04/解决Ubuntu18-04耳机没有声音问题/" data-toggle="tooltip" data-placement="top" title="解决Ubuntu18.04耳机没有声音问题">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Ubuntu18.04" title="Ubuntu18.04">Ubuntu18.04</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
 <script>
-    document.body.classList.add('page-fullscreen');
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
 </script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
